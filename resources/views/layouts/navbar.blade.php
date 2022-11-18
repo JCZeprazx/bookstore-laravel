@@ -16,19 +16,19 @@
             <div class="flex-fill">
                 <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link" href="{{ url('/about')}}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/shop">Shop</a>
+                        <a class="nav-link" href="{{ url('/shop')}}">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
+                        <a class="nav-link" href="{{ url('/contact')}}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/order">Order</a>
+                        <a class="nav-link" href="{{ url('/order')}}">Order</a>
                     </li>
                 </ul>
             </div>
