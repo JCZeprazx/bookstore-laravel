@@ -21,8 +21,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/shop', function () {
-    return view('shop');
+Route::prefix('/shop')->group(function () {
+    Route::get('/', function () {
+        return view('shop');
+    });
+
+    Route::get('/bookdetail', function () {
+        return view('bookdetail');
+    });
 });
 
 Route::get('/contact', function () {
