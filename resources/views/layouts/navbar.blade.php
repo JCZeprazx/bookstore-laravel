@@ -42,17 +42,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn-group dropstart">
-                    <button type="button" class="nav-icon position-relative text-decoration-none btn btn-light"
-                        data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1 "></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-
-                    </ul>
-                </div>
+                <div class="dropstart">
+                        <a class="btn nav-icon position-relative text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div class="cart">
+                                <div class="cart-list">
+                                    <img src="assets/img/buku/pulang_tere_liye.jpeg" alt="Pulang" style="width: 80px; height:120px; float: left; margin-right: 10px;">
+                                    <div class="detail-cart ">
+                                        <a class="text">Pergi</a>
+                                        <span class="author">Tere Liye</span>
+                                        <p class="text">Soft Cover</p>
+                                        <p class="text">Rp 87.000</p>
+                                        <p class="text" style="text-align: right;">Jumlah: 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tombol Bayar -->
+                            <div class="button-cart">
+                                <p class="total">
+                                    Total
+                                    <span style="font-weight: bold; float: right;">Rp 87.000</span>
+                                </p>
+                                <button class="tombol-cart">Lihat Keranjang</button>
+                            </div>
+                        </ul>
+                    </div>
                 <div class="dropdown">
                     <a class="nav-icon position-relative text-decoration-none btn btn-light" href="#"
                         data-bs-toggle="dropdown" aria-expanded="false">
