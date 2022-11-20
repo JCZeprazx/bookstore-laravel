@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,13 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/shop', function () {
-    return view('shop');
+
+Route::prefix('/shop')->group(function () {
+    Route::get('/', [ShopController::class, 'show']);
+
+    Route::get('/book-details', function () {
+        return view('book-details');
+    });
 });
 
 Route::get('/contact', function () {
@@ -31,4 +37,33 @@ Route::get('/contact', function () {
 
 Route::get('/order', function () {
     return view('order');
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin-db');
+    });
+
+    Route::prefix('/book')->group(function () {
+        Route::get('/', function () {
+            return view('admin-book');
+        });
+
+        Route::get('/add-book', function () {
+            return view('addbook');
+        });
+    });
+
+
+    Route::get('/author', function () {
+        return view('admin-author');
+    });
+
+    Route::get('/publisher', function () {
+        return view('admin-publisher');
+    });
+
+    Route::get('/shipping', function () {
+        return view('shipping');
+    });
 });
