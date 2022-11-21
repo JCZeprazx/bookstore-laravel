@@ -19,13 +19,13 @@ return new class extends Migration
             $table->string('isbn');
             $table->integer('total_page');
             $table->date('release_date');
-            $table->text('book_desription');
+            $table->text('book_description');
             $table->unsignedBigInteger('language_id');
             $table->unsignedBigInteger('publisher_id');
             $table->integer('book_cost');
             $table->integer('total_stock');
-            $table->integer('total_sold');
-            $table->binary('book_cover');
+            $table->integer('total_sold')->default('0');
+            $table->string('book_cover');
             $table->timestamps();
 
             $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');

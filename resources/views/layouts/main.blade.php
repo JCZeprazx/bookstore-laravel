@@ -32,6 +32,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/templatemo.js"></script>
     <script src="/js/custom.js"></script>
+    
     <!-- End Script -->
 
     <script src="/js/slick.min.js"></script>

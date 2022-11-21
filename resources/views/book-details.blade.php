@@ -48,6 +48,14 @@
                             </ul>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
+                                    <h6>Author :</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-strong"><strong>Gramed</strong></p>
+                                </li>
+                            </ul>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
                                     <h6>Stok Tersedia :</h6>
                                 </li>
                                 <li class="list-inline-item">

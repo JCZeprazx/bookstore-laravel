@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +28,6 @@ Route::get('/about', function () {
 
 Route::prefix('/shop')->group(function () {
     Route::get('/', [ShopController::class, 'show']);
-
     Route::get('/book-details', function () {
         return view('book-details');
     });
@@ -41,29 +43,47 @@ Route::get('/order', function () {
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', function () {
-        return view('admin-db');
+        return view('admin.admin-db');
     });
 
     Route::prefix('/book')->group(function () {
-        Route::get('/', function () {
-            return view('admin-book');
+        Route::get('/', [BookController::class, 'show']);
+        Route::prefix('/add-book')->group(function () {
+            Route::get('/', [BookController::class, 'bookForm']);
+            Route::post('/input', [BookController::class, 'store']);
         });
 
-        Route::get('/add-book', function () {
-            return view('addbook');
+        Route::get('/view/{id}', [BookController::class, 'view']);
+        Route::get('/edit/{id}', [BookController::class, 'edit']);
+        Route::delete('/delete/{id}', [BookController::class, 'destroy']);
+
+    });
+
+    Route::prefix('/author')->group(function () {
+        Route::get('/', [AuthorController::class, 'show']);
+        Route::prefix('/add-author')->group(function () {
+            Route::get('/', function () {
+                return view('admin.addauthor');
+            });
+            Route::post('/input', [AuthorController::class, 'store']);
         });
+        Route::put('/edit/{id}', [AuthorController::class, 'edit']);
+        Route::delete('/delete/{id}', [AuthorController::class, 'destroy']);
     });
 
-
-    Route::get('/author', function () {
-        return view('admin-author');
-    });
-
-    Route::get('/publisher', function () {
-        return view('admin-publisher');
+    Route::prefix('/publisher')->group(function () {
+        Route::get('/', [PublisherController::class, 'show']);
+        Route::prefix('/add-publisher')->group(function () {
+            Route::get('/', function () {
+                return view('admin.addpublisher');
+            });
+            Route::post('/input', [PublisherController::class, 'store']);
+        });
+        Route::put('/edit/{id}', [PublisherController::class, 'edit']);
+        Route::delete('/delete/{id}', [PublisherController::class, 'destroy']);
     });
 
     Route::get('/shipping', function () {
-        return view('shipping');
+        return view('admin.shipping');
     });
 });
