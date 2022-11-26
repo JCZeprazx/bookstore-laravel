@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page');
-});
+Route::get('/', [ShopController::class, 'landing']);
 
 Route::get('/about', function () {
     return view('about');
@@ -28,9 +26,7 @@ Route::get('/about', function () {
 
 Route::prefix('/shop')->group(function () {
     Route::get('/', [ShopController::class, 'show']);
-    Route::get('/book-details', function () {
-        return view('book-details');
-    });
+    Route::get('/book-details/{id}', [ShopController::class, 'detail']);
 });
 
 Route::get('/contact', function () {
@@ -55,6 +51,11 @@ Route::prefix('/admin')->group(function () {
 
         Route::get('/view/{id}', [BookController::class, 'view']);
         Route::get('/edit/{id}', [BookController::class, 'edit']);
+
+        Route::prefix('/edit/{id}')->group(function () {
+            Route::get('/', [BookController::class, 'edit']);
+            Route::put('/update', [BookController::class, 'editData']);
+        });
         Route::delete('/delete/{id}', [BookController::class, 'destroy']);
 
     });

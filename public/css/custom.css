@@ -1,3 +1,293 @@
 /*
 Custom Css
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap');
+
+/* E-wallet */
+.ewallet{
+    /* background-image: url(../img/bg.jpg); */
+    background-color: #59AB6E;
+    width: 600px;
+    color: white;
+    font-size: 18px;
+    padding: 20px 20px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+}
+
+.amount-detail{
+   margin: 20px 0;
+}
+
+.amount-detail p{
+    margin: 5px 0;
+ }
+
+
+ .btn{
+    font-size: 12px;
+    margin: 10px 0px 20px;
+    border-radius: 20px !important;
+ }
+
+ /* Keranjang */
+.cart{
+    padding: 10px;
+}
+.cart-list{
+    width: 360px;
+    padding: 4px;
+    overflow-y: scroll;
+    max-height: 450px ;
+    border-bottom: 1px solid rgba(109,109,109,.4);
+}
+
+.text{
+    font-weight: bold !important;
+    font-size: 14px !important;
+    letter-spacing: normal;
+    margin:8px 0 0 !important;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.author{
+    display: block;
+    color: rgba(109,109,109,.8);
+    font-size: 10px !important;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+/* Tombol Lihat Keranjang */
+
+.button-cart{
+    padding: 20px 16px 0;
+    border-top: 1px solid rgba(109,109,109,.4);
+}
+
+.total{
+    font-size: 15px;
+    word-wrap: break-word;
+}
+
+.tombol-cart{
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(59, 66, 200);
+    border: 0;
+    color: white;
+}
+
+/* Cart Section */
+.cart-start{
+    padding: 60px;
+    font-size: 24px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.cart-container{
+ display: flex;
+}
+
+.cart-column{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.cart-section{
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 0 10px rgb(229 229 229 / 80%);
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+.bayar-info{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 5%;
+    width: 336px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgb(229 229 229 / 80%);
+    border-radius: 10px;
+}
+
+.cart-detail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.judul-cart, .cart-info1{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.cart-info1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.judul-awal{
+    display: inline-block;
+    font-family:'Nunito', sans-serif;
+    font-weight: bold !important;
+    text-align: left;
+}
+
+.cart-info2{
+    width: 320px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.info-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.info-judul{
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif ;
+}
+
+.hargaJumlah{
+    justify-content: space-between;
+}
+
+.jumlah-detail{
+    display: flex;
+    align-items: center;
+}
+
+.jumlah-detail .input{
+    width: 50px;
+    height: 30px;
+    border: 0;
+    outline: none;
+    cursor:text;
+    text-align: center;
+}
+
+.harga-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon{
+    width: 40px;
+    height: 30px;
+    background-color: rgb(53, 53, 190);
+    color: white;
+    border-radius: 15px;
+}
+
+.icon span{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.detail-bayar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tulisan-bayar, .tulisan2-bayar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.tulisan2-bayar p{
+   font-size: 16px !important;
+   font-family: 'Nunito', sans-serif;
+}
+
+.tulisan-bayar p{
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.total-bayar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hapus{
+    cursor: pointer;
+}
+/* checkout */
+
+.bayar-bayar{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.rincian, .metode-bayar{
+    width: 336px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgb(229 229 229 / 80%);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.metode-bayar{
+    padding: 30px;
+}
+
+.metode-bayar .bayartok, .pilih-kirim .kirim, .rincian .tombol-bayar, .alamat-user a, .tombol-bayar{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: rgb(0, 72, 255);
+    background-color: white;
+    border: 1px solid rgb(0, 72, 255);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    font-family: 'Nunito', sans-serif;
+}
+
+.metode-kirim{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.pilih-kirim{
+    max-width: 65%;
+    min-width: 50%;
+}
+
+
+
+
+
+

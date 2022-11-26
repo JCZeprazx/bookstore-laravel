@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Zay Shop eCommerce HTML CSS Template</title>
+    <title>Bookstore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +32,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/templatemo.js"></script>
     <script src="/js/custom.js"></script>
-    
+
     <!-- End Script -->
 
     <script src="/js/slick.min.js"></script>

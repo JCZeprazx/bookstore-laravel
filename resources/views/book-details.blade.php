@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="/img/product_single_10.jpg" alt="Card image cap"
+                        <img class="card-img img-fluid" src="{{ asset('storage/photo/'. $book->book_cover) }}" alt="Card image cap"
                             id="product-detail">
                     </div>
                 </div>
@@ -16,8 +16,8 @@
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2">Active Wear</h1>
-                            <p class="h3 py-2">$25.00</p>
+                            <h1 class="h2">{{ $book->book_name }}</h1>
+                            <p class="h3 py-2">Rp {{ $book->book_cost }}</p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <h6>Kategori :</h6>
@@ -27,15 +27,13 @@
                                 </li>
                             </ul>
                             <h6>Deskripsi :</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut
-                                labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum
-                                convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                            <p>{{ $book->book_description }}</p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <h6>Bahasa :</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-strong"><strong>Indonesia</strong></p>
+                                    <p class="text-strong"><strong>{{ $book->language->language }}</strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
@@ -43,7 +41,7 @@
                                     <h6>Penerbit :</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-strong"><strong>Gramed</strong></p>
+                                    <p class="text-strong"><strong>{{ $book->publisher->publisher_name }}</strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
@@ -51,7 +49,7 @@
                                     <h6>Author :</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-strong"><strong>Gramed</strong></p>
+                                    <p class="text-strong"><strong></strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
@@ -59,7 +57,7 @@
                                     <h6>Stok Tersedia :</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text"><strong>10</strong></p>
+                                    <p class="text"><strong>{{ $book->total_stock }}</strong></p>
                                 </li>
                             </ul>
                             <ul class="list-inline">
@@ -67,7 +65,7 @@
                                     <h6>Buku Terjual :</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-strong"><strong>90</strong></p>
+                                    <p class="text-strong"><strong>{{ $book->total_sold }}</strong></p>
                                 </li>
                             </ul>
                             <form action="" method="GET">

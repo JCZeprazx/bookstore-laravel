@@ -5,33 +5,33 @@
 
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <ul class="list-unstyled templatemo-accordion">
-                    @foreach ($categories as $category)
-                        <li class="pb-3">
-                            <a class="collapsed d-flex justify-content-between h4 text-decoration-none" href="#">
-                                {{ $category['category_name'] }}
-                            </a>
-                        </li>
-                    @endforeach
+                    <h4>Categories</h4>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h4 text-decoration-none" href="#">
+                            Action
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div class="row">
                     <div class="col-md-6">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
+                    @foreach ($products as $product)
+                    <div class="col-md-3">
+                        <div class="card mb-4 product-wap rounded-0 h-100">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="img/shop_01.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="{{ asset('storage/photo/'. $product->book_cover) }}">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white" href="/shop/book-details"><i
                                                     class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="/shop/book-details"><i
+                                        <li><a class="btn btn-success text-white mt-2" href="/shop/book-details/{{ $product->id }}"><i
                                                     class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="/shop/book-details"><i
                                                     class="fas fa-cart-plus"></i></a></li>
@@ -39,11 +39,14 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <a href="/shop/book-details" class="h3 text-decoration-none">Nama buku </a>
-                                <p class="text-center mb-0">harga</p>
+                                <a href="/shop/book-details" class="h3 text-decoration-none"><strong>{{ $product->book_name }}</strong> </a>
+                            </div>
+                            <div class="card-footer">
+                                <p class="text-center mb-0">Rp {{ $product->book_cost }}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
                 <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">
