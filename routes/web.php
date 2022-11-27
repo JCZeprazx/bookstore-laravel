@@ -61,14 +61,9 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/author')->group(function () {
         Route::get('/', [AuthorController::class, 'show']);
-        Route::prefix('/add-author')->group(function () {
-            Route::get('/', function () {
-                return view('admin.addauthor');
-            });
-            Route::post('/input', [AuthorController::class, 'store']);
-        });
         Route::put('/edit/{id}', [AuthorController::class, 'edit']);
         Route::delete('/delete/{id}', [AuthorController::class, 'destroy']);
+        Route::post('/input', [AuthorController::class, 'store']);
     });
 
     Route::prefix('/publisher')->group(function () {

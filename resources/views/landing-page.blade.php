@@ -1,7 +1,16 @@
+{{-- Extending Main Layout --}}
 @extends('layouts.main')
 
+{{-- Page Title --}}
+@section('title', 'Bookstore')
+
+{{-- Page Content --}}
 @section('content')
+
+    {{-- Navbar --}}
     @include('layouts.navbar')
+
+    {{-- Carousel --}}
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
@@ -73,6 +82,9 @@
             <i class="fas fa-chevron-right"></i>
         </a>
     </div>
+
+    {{-- Featured Book --}}
+
     <section class="bg-light">
         <div class="container py-5">
             <div class="row text-center py-3">
@@ -83,31 +95,39 @@
                     </p>
                 </div>
             </div>
+
             <div class="row">
-                @foreach ($products as $product)
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100">
-                            <a href="/shop/book-details/{{ $product->id }}">
-                                <img src="{{ asset('storage/photo/' . $product->book_cover) }}" class="card-img-top"
-                                    alt="...">
-                            </a>
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <a href="/shop/book-details/{{ $product->id }}"
-                                    class="h3 text-decoration-none text-dark"><strong>{{ $product->book_name }}</strong></a>
+                @if (!empty($product))
+
+                    @foreach ($products as $product)
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100">
+                                <a href="/shop/book-details/{{ $product->id }}">
+                                    <img src="{{ asset('storage/photo/' . $product->book_cover) }}" class="card-img-top"
+                                        alt="...">
+                                </a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="/shop/book-details/{{ $product->id }}"
+                                        class="h3 text-decoration-none text-dark"><strong>{{ $product->book_name }}</strong></a>
                                     @foreach ($product->authors as $author)
-                                    <p>Karya : {{ $author->author_firstname . '' . $author->author_lastname }}</p>
+                                        <p>Karya : {{ $author->author_firstname . '' . $author->author_lastname }}</p>
                                     @endforeach
-                            </div>
-                            <div class="card-footer text-center">
-                                <a class="btn btn-primary mx-0 " href="/shop/book-details/{{ $product->id }}"
-                                    role="button">Click to View!</a>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a class="btn btn-primary mx-0 " href="/shop/book-details/{{ $product->id }}"
+                                        role="button">Click to View!</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+
+                @endif
             </div>
 
         </div>
     </section>
+
+    {{-- Footer --}}
     @include('layouts.footer')
+
 @endsection

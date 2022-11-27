@@ -1,10 +1,20 @@
+{{-- Extending Main Layout --}}
 @extends('layouts.main')
 
+{{-- Page Title --}}
+@section('title', 'Shop')
+
+{{-- Page Content --}}
 @section('content')
+
+    {{-- Navbar --}}
     @include('layouts.navbar')
+
 
     <div class="container py-5">
         <div class="row">
+
+            {{-- Categories --}}
             <div class="col-lg-3">
                 <ul class="list-unstyled templatemo-accordion">
                     <h4>Categories</h4>
@@ -15,6 +25,8 @@
                     </li>
                 </ul>
             </div>
+
+            @if (!empty($product))
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-md-6">
@@ -47,6 +59,8 @@
                         </div>
                     </div>
                     @endforeach
+
+                {{-- Pagination --}}
                 </div>
                 <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">
@@ -64,7 +78,9 @@
                         </li>
                     </ul>
                 </div>
+                
             </div>
+            @endif
 
         </div>
     </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bookstore</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" type="text/css" href="/css/slick.min.css">
     <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
-
 </head>
 
 <body>

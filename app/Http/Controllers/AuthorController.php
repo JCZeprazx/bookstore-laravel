@@ -12,12 +12,16 @@ class AuthorController extends Controller
     {
         $names = Author::all();
         return view('admin.admin-author', [
-            'names' => $names
+            'names' => $names,
         ]);
     }
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'author_firstname' => 'required'
+        ]);
+
         Author::create($request->all());
         return redirect('/admin/author');
     }

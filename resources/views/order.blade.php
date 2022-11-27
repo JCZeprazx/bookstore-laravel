@@ -1,8 +1,16 @@
+{{-- Extending Main Layout --}}
 @extends('layouts.main')
 
+{{-- Page title --}}
+@section('title', 'Order')
+
+{{-- Page content --}}
 @section('content')
+
+    {{-- Navbar --}}
     @include('layouts.navbar')
 
+    
     <div class="cart-start">
         <div class="container py-5 cart-container">
             <div class="cart-column">
