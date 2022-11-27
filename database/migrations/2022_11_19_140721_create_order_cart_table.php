@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('payment_id');
             $table->integer('quantity');
             $table->integer('total_cost');
+            $table->enum('order_status', ['Selesai', 'Belum Selesai']);
             $table->timestamps();
 
             $table->foreign('user_order_id')->references('id')->on('user__orders')->onDelete('cascade');

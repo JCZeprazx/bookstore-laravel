@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.navbar')
-    
+
     <div class="cart-start">
         <div class="container py-5 cart-container">
             <div class="cart-column">

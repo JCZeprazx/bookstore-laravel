@@ -369,6 +369,9 @@
         $(document).ready(function() {
             $('.select-author').select2();
         });
+        $(document).ready(function() {
+            $('.select-categories').select2();
+        });
     </script>
 </body>
 

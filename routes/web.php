@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +34,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/order', function () {
-    return view('order');
-});
+Route::get('/order', [OrderController::class, 'show']);
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', function () {

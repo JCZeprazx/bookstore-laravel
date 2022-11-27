@@ -41,7 +41,7 @@ class Book extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Role::class, 'role_user_table', 'book_id', 'category_id');
+        return $this->belongsToMany(Category::class, 'book_category', 'book_id', 'category_id');
     }
 
     public function userOrder()
