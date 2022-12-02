@@ -93,6 +93,10 @@
                                         @endif
                                     </tbody>
                                 </table>
+                                <button class="btn btn-primary" type="button" data-toggle="modal"
+                                    data-target="#tambahData">
+                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah Data
+                                </button>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
@@ -110,13 +114,6 @@
                                         </li>
                                     </ul>
                                 </nav>
-                                {{-- <a href="/admin/author/add-author" class="btn btn-primary">
-                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah Data
-                                </a> --}}
-                                <button class="btn btn-primary" type="button" data-toggle="modal"
-                                    data-target="#tambahData">
-                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah Data
-                                </button>
                             </div>
                         </div>
                     </div>
