@@ -25,6 +25,7 @@ Route::get('/about', function () {
 });
 
 
+
 Route::prefix('/shop')->group(function () {
     Route::get('/', [ShopController::class, 'show']);
     Route::get('/book-details/{id}', [ShopController::class, 'detail']);
