@@ -1,0 +1,50 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Author;
+use Illuminate\Http\Request;
+use PDF;
+
+class AuthorController extends Controller
+{
+
+    public function show()
+    {
+        $names = Author::all();
+        return view('admin.admin-author', [
+            'names' => $names,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'author_firstname' => 'required'
+        ]);
+
+        Author::create($request->all());
+        return redirect('/admin/author');
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $author = Author::findOrFail($id);
+        $author->update($request->all());
+        return redirect('/admin/author');
+    }
+
+    public function destroy($id)
+    {
+        $author = Author::findOrFail($id);
+        $author->delete();
+        return redirect('/admin/author');
+    }
+
+    public function authorPDF(){
+        $names = Author::all(); 
+        $pdf = PDF::loadView('admin.author_pdf', ['names' => $names]);
+        return $pdf->download('report_author.pdf');
+    }
+
+}
